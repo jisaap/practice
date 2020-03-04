@@ -84,7 +84,7 @@ public class Solution15 {
 							stack.pop();
 							//괄호 추가
 							c = answer.charAt(i);
-							temp = "(" + answer.substring(index - 1, index  + 2) + ")";
+							temp = "(" + answer.substring(index - 1, i) + ")";
 							answer = answer.substring(index + 2, answer.length());
 							answer = temp+answer;
 							count = count  + 2;
