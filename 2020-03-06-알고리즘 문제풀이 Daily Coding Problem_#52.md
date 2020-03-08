@@ -2,12 +2,6 @@
 
 
 
-문제를 이해 할수도 없었다 
-
-내일 까지 분석 해보기
-
-
-
 //	Implement an LRU (Least Recently Used) cache. 
 //	It should be able to be initialized with a cache size n, and contain the following methods:
 //
