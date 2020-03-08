@@ -1,7 +1,3 @@
-출처 : https://joooootopia.tistory.com/18
-
-
-
 출처 : [[Java 자료구조\] 이중연결리스트(Double LinkedList) 구현](https://joooootopia.tistory.com/18)
 
 2019. 1. 24. 22:46
@@ -314,7 +310,7 @@ public void deleteFirstNode() {
 리스트에 노드가 1개뿐인 상황에서 else문으로 이 연산을 수행시킨다면 head = oldNode.getNext(); 에서 NullPointerException이 발생한다. 리스트에 노드가 1개뿐이라면 head가 가리키는 노드 = tail이 가리키는 노드 = 마지막 노드이기 때문에 head.getNext()는 당연히 아무것도 없기 때문에 에러가 날 수 밖에 없다. 따라서 노드가 1개뿐인 상황을 따로 정의해주고 구현해줘야한다. 
 
 
-  
+
 
 
 
