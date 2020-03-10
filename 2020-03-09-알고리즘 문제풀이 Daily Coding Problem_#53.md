@@ -33,13 +33,6 @@ public class Solution18 {
 	
 	public static void main(String[] args) {
 		Queue q = new Queue();
-		q.put("1");
-		q.put("2");
-		q.put("3");
-		
-		System.out.println(q.pop());
-		System.out.println(q.pop());
-		System.out.println(q.pop());
 		
 	}
 
