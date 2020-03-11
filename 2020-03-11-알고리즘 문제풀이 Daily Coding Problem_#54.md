@@ -2,16 +2,7 @@
 
 package solution;
 
-//억지로 풀지 말고 로직 다시짜기;
-
-public class Solution19 {
-
-//	Sudoku is a puzzle where you're given a partially-filled 9 by 9 grid with digits.
-//	The objective is to fill the grid with the constraint that every row, column, 
-//	and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
-//
-//	Implement an efficient sudoku solver.
-	
+// StackOverflowError 에러난다;;
 
 package solution;
 
@@ -22,91 +13,90 @@ public class Solution19 {
 //	and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
 //
 //	Implement an efficient sudoku solver.
-	
-	static int[][] sudoku =  new int[9][9];
-	static int[][] result =  new int[9][9];
-	int temp = 0;
-	
+	static int su = 10;
+	static int count = 0;
+	static int[][] sudoku = new int[su][su];
+
 	public static void main(String[] args) {
-		
-		for(int i = 0; i < 9; i ++) {
-			result[0][i] = i + 1;
-			for(int j = 0; j < 9; j ++) {
-				sudoku[i][j] = j + 1;
-				System.out.print(sudoku[i][j] + " ");
-			}
-			System.out.println();
-		}
-		
-		System.out.println("-----------------------------------------------------------");
-		check();
-		
-		print();
-	}
-	public static void check() {
-		for(int i = 0; i < 9; i ++) {
-			for(int j = 0; j < 9; j ++) {
-				check2(i, j ,sudoku[i][j]);
-			}
-			}
-		for(int i = 1; i < 9; i ++) {
-			if(sudoku[i - 1][1] == sudoku[i][0]) {
-				shuffle2(sudoku[i][0], i, true);
-				System.out.println("iiiiiiiiiii"  + i);
-				continue;
+		for (int i = 0; i < su; i++) {
+			for (int j = 0; j < su; j++) {
+				sudoku[i][j] = 0;
 			}
 		}
-		
+		result(count);
 	}
 	
-	public static void check2(int i,int j,  int num) {
-			for(int k = 0; k < 9; k ++) {
-				if(i != k && sudoku[k][j] == num) {
-					shuffle(num, k);
+	public static void result(int c) {
+		if (c == 81) {
+			for (int i = 0; i < su; i++) {
+				for (int j = 0; j < su; j++) {
+					System.out.print(sudoku[i][j]);
 				}
-			
+				System.out.println();
+			}
 		}
-		
+		int col = 0;
+		int row = 0;
+		for (int i = 0; i < su; i++) {
+			for (int j = 0; j < su; j++) {
+				if (sudoku[i][j] == 0) {
+					col = i;
+					row = j;
+					makeNum(col, row);
+				}
+			}
+		}
+	
 	}
 	
-	public static void shuffle(int n, int i) {
-		for(int j = 1; j < 9; j ++) {
-			sudoku[i][j -1] = sudoku[i][j];
-		}
-		sudoku[i][8] = n;
-		}
-
-
-​	
-​	
-	//3 * 3 검증 로직 추가하기
-	public static void shuffle2(int n, int i, boolean flag) {
-		System.out.println("!!!!!!"+ n);
-			if(flag == false) {
-				for(int j = 1; j < 9; j ++) {
-					result[i][j - 1] = result[i][j];
-				}
-				result[i][8] = n;
-				return;
-			}else {
-				for(int j = 1; j < 9; j ++) {
-					result[i][j - 1] = sudoku[i][j];
-				}
-				result[i][8] = n;
-				n = result[i][0];
-				System.out.println("???????"+ n);
-				shuffle2(n, i, false);
+	public static void makeNum(int col, int row) {
+		for (int i = 0; i < su; i++) {
+			int num = (int)(Math.random() * 9) + 1;
+			if (checked(col, row, num)) {
+				sudoku[col][row] = num;
+				System.out.println(count + "      " + num);
+				result(++count);
+			} else {
+//				result(count);
+				makeNum(col, row);
 			}
-		}
 
-
-​	
-	public static void print() {
-		for(int i = 0; i < 9; i ++) {
-			for(int j = 0; j < 9; j ++) {
-				System.out.print(result[i][j] + " ");
-			}
-			System.out.println();
 		}
 	}
-}
+	
+	public static boolean checked(int col, int row, int num) {
+		if (checkCol(col, num) && checkrow(row, num) && check(col, row, num)) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static boolean checkCol(int col, int num) {
+		for (int i = 0; i < su; i++) {
+			if (sudoku[i][col] == num) return false;
+		}
+		return true;
+	}
+	
+	public static boolean checkrow(int row, int num) {
+		for (int i = 0; i < su; i++) {
+			if (sudoku[row][i] == num) return false;
+		}
+		return true;
+	}
+	
+	public static boolean check(int col, int row, int num) {
+			int c = col < 4?0:(int)(Math.ceil(col / 3) - 1) * 3 + 1;
+			int r = row < 4?0:(int)(Math.ceil(row / 3) - 1) * 3 + 1;
+			for (int i = 0; i < 3; i++) {
+				for(int j = 0; j < 3; j ++) {
+					if (sudoku[r + i][c + j] == num) return false;
+				}
+			}
+		return true;
+		}
+	}
+
+
+​	
+​	
