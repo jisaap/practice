@@ -56,7 +56,7 @@ public class DailyCoding55 {
 			if (!map.containsKey(result)) {
 				return result;
 			} else {
-				settingURL(map);
+				return settingURL(map);
 			}
 		}
 	}
