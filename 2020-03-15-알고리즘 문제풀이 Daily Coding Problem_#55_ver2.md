@@ -52,13 +52,11 @@ public class DailyCoding55 {
 			result = (char) ((int) (Math.random() * 10) + 48);
 			break;
 		}
-		while (true) {
 			if (!map.containsKey(result)) {
 				return result;
 			} else {
 				return settingURL(map);
 			}
-		}
 	}
 
 	public static String shorten(String url, HashMap<Character, String> map, int divide) {
@@ -73,7 +71,6 @@ public class DailyCoding55 {
 			if (lastIndex < url.length()) {
 				c = settingURL(map);
 				map.put(c, url.substring(firstIndex, lastIndex));
-				enCode += c;
 				// divide로 나눌때 값이 떨어지지 않아 나누는 수보다는 적게 남은 경우
 			} else if (firstIndex < url.length() && url.length() <= lastIndex) {
 				String arr = "";
@@ -82,12 +79,11 @@ public class DailyCoding55 {
 				}
 				c = settingURL(map);
 				map.put(c, arr);
-				enCode += c;
 			} else {
 				c = settingURL(map);
 				map.put(c, "");
-				enCode += c;
 			}
+			enCode += c;
 		}
 
 		return enCode;
@@ -103,5 +99,4 @@ public class DailyCoding55 {
 	}
 
 }
-
 ```
