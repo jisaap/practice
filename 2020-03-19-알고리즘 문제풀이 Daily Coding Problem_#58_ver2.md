@@ -15,7 +15,6 @@ import java.util.Arrays;
 //
 //You can assume all the integers in the array are unique.
 
-
 public class DailyCoding58 {
 
 	public static void main(String[] args) {
@@ -25,15 +24,28 @@ public class DailyCoding58 {
 		int st = 0;
 		int en = arr.length - 1;
 
-		System.out.println(Arrays.asList(arr).get(0));
+		System.out.println(finder(find, st, en, arr));
 		
 		Arrays.sort(arr);
 
-//		이진 탐색은 정렬해서 인덱스를 찾는 의미가 없음
-//		선형 탐색보다 빠르다고 하는것만 보고 이진탐색을 생각 없이 ㅠ
-//		System.out.println(binarySearch(find, st, en, arr));
+		System.out.println(binarySearch(find, st, en, arr));
 	}
-
+//      이렇게 하면 더 빠르겠지
+	public static int finder(int find, int st, int en, int[] arr) {
+		
+		for(int i = 0; i < arr.length; i ++) {
+			if(arr[i] == find) {
+				return i;
+			}else if(arr[(arr.length - 1) - i] == find) {
+				return (arr.length -1) - i;
+			}
+		}
+			return  -1;
+	}
+	
+	
+	
+	
 	public static int binarySearch(int find, int st, int en, int[] arr) {
 
 		int i = (st + en) / 2;
