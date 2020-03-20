@@ -24,14 +24,14 @@ public class DailyCoding58 {
 		int st = 0;
 		int en = arr.length - 1;
 
-		System.out.println(finder(find, st, en, arr));
+		System.out.println(finder(find, arr));
 		
 		Arrays.sort(arr);
 
 		System.out.println(binarySearch(find, st, en, arr));
 	}
 //      이렇게 하면 더 빠르겠지
-	public static int finder(int find, int st, int en, int[] arr) {
+	public static int finder(int find, int[] arr) {
 		
 		for(int i = 0; i < arr.length; i ++) {
 			if(arr[i] == find) {
