@@ -14,7 +14,6 @@ package DailyCoding;
 //
 //For example, pow(2, 10) should return 1024.
 
-
 public class DailyCoding61 {
 
 	
