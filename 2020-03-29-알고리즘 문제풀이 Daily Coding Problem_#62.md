@@ -56,7 +56,7 @@ public class DailyCoding62 {
 			}
 		}
 		//오른쪽으로 가는 경우
-		if(y < n -1) {
+		if(y < m -1) {
 			check ++;
 			find(x,y+1);
 			if(check == m) {
