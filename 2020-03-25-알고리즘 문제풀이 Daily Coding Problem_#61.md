@@ -13,6 +13,7 @@ package DailyCoding;
 //Do this faster than the naive method of repeated multiplication.
 //
 //For example, pow(2, 10) should return 1024.
+//ㅠㅜ
 
 public class DailyCoding61 {
 
