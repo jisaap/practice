@@ -45,7 +45,6 @@ public class DailyCoding63 {
 			for(int j = 0; j < m[i].length; j ++) {
 				col += m[i][j];
 				row += m[j][i];
-				System.out.println("col : " + col + "       row : " + row);
 				if(col.equals(tw)) {
 					return true;
 				}else if(row.equals(tw)) {
