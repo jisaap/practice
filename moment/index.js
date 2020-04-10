@@ -6,7 +6,6 @@ const CLICKED_CLASS = "clicked";
 
 function handleClick() {
    
-   
     // toggle 은 함수안에 있는 값을 체크해 클래스가 있으면 remove 없으면 add 해줌
     title.classList.toggle(CLICKED_CLASS);
     // 같은 역할을 하는 토글로 대체함
