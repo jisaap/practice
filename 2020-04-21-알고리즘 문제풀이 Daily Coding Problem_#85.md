@@ -20,7 +20,7 @@ public class DailyCoding85 {
 		int y = sc.nextInt();
 		int b = (int)(Math.random() *2);
 		
-		System.out.println((b|b )* x + (~b + 2) * y);
+		System.out.println(b * x + (~b + 2) * y);
 	}
 }
 
