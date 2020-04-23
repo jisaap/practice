@@ -24,6 +24,7 @@ public class DailyCoding86 {
 			else if(result == '(' && c == ')')result = ' ';
 			else count ++;
 		}
+		if(result !=' ')count ++;
 		
 		System.out.println(count);
 	}
