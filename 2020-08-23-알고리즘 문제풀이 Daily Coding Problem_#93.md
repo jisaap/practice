@@ -10,7 +10,6 @@ package DailyCoding;
 //
 //Given a tree, return the size of the largest tree/subtree that is a BST.
 
-//	가장 큰 노드 값고ㅏ 서브트리 출력	
 public class DailyCoding93 {
 
 	
@@ -31,8 +30,8 @@ public class DailyCoding93 {
 		node6.setLeft(node4);
 		node4.setRight(node5);
 		
-		
-		System.out.println(getSubTree(getLargestTree(node3, node3.getValue()), 0));
+		TreeNode2 tn = getLargestTree(node3, node3.getValue());
+		System.out.println(tn.getValue() +"번 노드           하위노드 크기 : "+getSubTree(tn , 0));
 		
 	}
 	
