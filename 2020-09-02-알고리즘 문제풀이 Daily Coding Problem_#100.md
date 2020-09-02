@@ -33,7 +33,7 @@ public class DailyCoding100 {
 
 	public static void main(String[] args) {
 		
-		int[][] input = {{0,0},{2,1},{1,3}};
+		int[][] input = ((0,0),(2,1),(1,3));
 		int result = 0;
 		for(int i = 1; i < input.length; i ++) {
 			result += check(input[i - 1][0], input[i - 1][1], input[i][0], input[i][1]);
