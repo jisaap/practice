@@ -1,5 +1,8 @@
 알고리즘 문제풀이
 
+코드 출처 : [https://code0xff.tistory.com/135] Ian's Warehouse 
+	18. 최소 공통 조상 (LCA: Lowest Common Ancestor) 2
+
 
 
 ```java
@@ -110,3 +113,6 @@ public class DailyCoding112 {
 }
 
 ```
+코드 출처 : [https://code0xff.tistory.com/135] Ian's Warehouse 
+	18. 최소 공통 조상 (LCA: Lowest Common Ancestor) 2
+
