@@ -47,22 +47,22 @@ public class DailyCoding119 {
 				else map.put(su, 1);
 			}
 		}
-		int aV = 0;
-		int bV = 0;
-		String temp = "aV";
+		int aVal = 0;
+		int bVal = 0;
+		String temp = "aVal";
 		for(int key : map.keySet()) {
 			if(result.size() != 0) {
-				if(aV <= map.get(key) || bV <= map.get(key))temp = aV < bV?"aV":aV ==bV?"CK":"bV";
+				if(aVal <= map.get(key) || bVal <= map.get(key))temp = aVal < bVal?"aVal":aVal ==bVal?"CK":"bVal";
 			}
-			if(temp == "CK") temp = result.get(0) > result.get(1)?"aV":"bV";
-			if(temp == "aV" && aV <= map.get(key) ) {
+			if(temp == "CK") temp = result.get(0) > result.get(1)?"aVal":"bVal";
+			if(temp == "aVal" && aVal <= map.get(key) ) {
 				if(result.size() != 0)result.remove(0);
-				aV = map.get(key);
+				aVal = map.get(key);
 				result.add(0, key);
 			}
-			if(temp == "bV" && bV <= map.get(key)) {
+			if(temp == "bVal" && bVal <= map.get(key)) {
 				if(result.size() != 1)result.remove(1);
-				bV = map.get(key);
+				bVal = map.get(key);
 				result.add(1, key);
 			}
 			
