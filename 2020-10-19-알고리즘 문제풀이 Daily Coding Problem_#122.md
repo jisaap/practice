@@ -20,7 +20,7 @@ public class DailyCoding122 {
 
 	public static void main(String[] args) {
 
-		int[][] input = {{0,3,1,1} , {2,0,0,4}, { 1,5,3,1}};
+		int[][] input = [[0,3,1,1} , {2,0,0,4}, { 1,5,3,1]];
 		
 		System.out.println(maxval(input));
 	}
